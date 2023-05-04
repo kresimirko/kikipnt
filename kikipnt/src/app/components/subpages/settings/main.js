@@ -56,25 +56,6 @@ export class SubpageSettings extends Subpage {
 
         this.rootContainer.appendChild(document.createElement('hr'));
 
-        const forceSyncButton = new QuickButton(
-            {
-                locValue: 'ui.sp.settings.force_sync',
-                icon: 'sync',
-                styles: [
-                    qbStyles.classic,
-                    {
-                        root: ['block'],
-                        content: ['bg-nord-10', 'text-nord-6'],
-                    },
-                ],
-                clickEvent: () => {
-                    this.#mainApp.firebaseInterface.sync();
-                },
-            },
-            this.#mainApp
-        );
-        this.rootContainer.appendChild(forceSyncButton.buttonEl);
-
         const clearAllSettingsButton = new QuickButton(
             {
                 locValue: 'ui.sp.settings.erase_all_data',
@@ -89,7 +70,6 @@ export class SubpageSettings extends Subpage {
                 clickEvent: () => {
                     if (confirm(this.#mainApp.loc.tr('ui.sp.settings.erase_all_data_confirm'))) {
                         store.clearAll();
-                        this.#mainApp.firebaseInterface.updateRemote();
                         location.reload();
                     }
                 },

@@ -4,8 +4,6 @@ import { ThemeManager } from './themeManager';
 import { StatusLabel } from './components/header/statusLabel';
 import { icon, latLng } from 'leaflet';
 import store from 'store2';
-import { FirebaseInterface } from './firebase/firebaseInterface';
-import firebaseConfig from './__firebaseConfig.json';
 import defaultSettings from './assets/defaultSettings.json';
 
 export class MainApp {
@@ -152,14 +150,6 @@ export class MainApp {
                         this.events.target.dispatchEvent(new CustomEvent('subpagecollectionrefreshed'));
                     },
                 },
-                firebase: {
-                    loggedIn: () => {
-                        this.events.target.dispatchEvent(new CustomEvent('loggedin'));
-                    },
-                    loggedOut: () => {
-                        this.events.target.dispatchEvent(new CustomEvent('loggedout'));
-                    },
-                },
                 easterEgg: () => {
                     this.events.target.dispatchEvent(new CustomEvent('easteregg'));
                 },
@@ -184,8 +174,6 @@ export class MainApp {
                 },
             },
         };
-
-        this.firebaseInterface = new FirebaseInterface(this, firebaseConfig);
 
         this.loc = new LocalizationManager(this);
 

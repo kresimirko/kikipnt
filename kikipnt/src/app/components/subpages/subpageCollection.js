@@ -2,10 +2,8 @@ import { MainApp } from '../../main';
 import { Subpage } from './base';
 import { SubpageAbout } from './about/main';
 import { SubpageHome } from './home/main';
-import { SubpageAccount } from './account/main';
 import { SubpageMap } from './map/main';
 import { SubpageSettings } from './settings/main';
-import { SubpageAccountLogin } from './account/login';
 import { SubpageEasterEgg } from './about/easterEgg';
 import { SubpageHistory } from './map/history';
 
@@ -19,8 +17,6 @@ export class SubpageCollection {
         /** @type {Subpage[]} */
         this.mainSubpages = [
             new SubpageAbout(this.#mainApp),
-            new SubpageAccount(this.#mainApp),
-            new SubpageAccountLogin(this.#mainApp),
             new SubpageEasterEgg(this.#mainApp),
             new SubpageHome(this.#mainApp),
             new SubpageMap(this.#mainApp),

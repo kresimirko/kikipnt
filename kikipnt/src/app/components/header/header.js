@@ -81,17 +81,6 @@ export class TopBarHeader {
 
         sideButtonsContainer.appendChild(this.#mainApp.statusLabel.rootEl);
 
-        const loginButton = new QuickButton(
-            {
-                text: this.#mainApp.loc.tr('ui.generic.log_in'), // bez automatskog upd.
-                icon: 'account_circle',
-                styles: [qbStyles.alt, { text: ['hidden', 'sm:block'] }],
-                link: '#/account',
-            },
-            this.#mainApp
-        );
-        sideButtonsContainer.appendChild(loginButton.buttonEl);
-
         const historyButton = new QuickButton(
             {
                 locValue: 'ui.sp.history.title',
@@ -142,34 +131,6 @@ export class TopBarHeader {
             }
         );
         updateLogo(this.#mainApp.themeManager.isCurrentThemeDark());
-
-        const onLogIn = () => {
-            loginButton.applyStyle({
-                icon: ['text-nord-10', 'dark:text-nord-9'],
-                text: ['text-nord-10', 'dark:text-nord-9'],
-            });
-
-            loginButton.elements.text.innerText = this.#mainApp.firebaseInterface.username;
-            loginButton.elements.root.setAttribute('aria-label', this.#mainApp.firebaseInterface.username);
-        };
-
-        const onLogOut = () => {
-            loginButton.clearStyles();
-            loginButton.applyStyle(qbStyles.alt);
-            loginButton.applyStyle({ text: ['hidden', 'sm:block'] });
-
-            loginButton.elements.text.innerText = this.#mainApp.loc.tr('ui.generic.log_in');
-            loginButton.elements.root.setAttribute('aria-label', this.#mainApp.loc.tr('ui.generic.log_in'));
-        };
-
-        this.#mainApp.events.target.addEventListener('loggedin', onLogIn);
-        this.#mainApp.events.target.addEventListener('loggedout', onLogOut);
-
-        const onLangChange = () => {
-            this.#mainApp.firebaseInterface.loggedIn ? onLogIn() : onLogOut();
-        };
-        onLangChange();
-        this.#mainApp.events.target.addEventListener('langchange', onLangChange);
     }
 
     hide() {

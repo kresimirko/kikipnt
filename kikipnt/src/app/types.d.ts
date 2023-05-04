@@ -2,21 +2,11 @@ import type { Placement } from '@floating-ui/dom';
 
 // localizationMgr
 export type LanguageValues =
-    | 'ui.generic.log_in'
-    | 'ui.generic.register'
-    | 'ui.generic.log_out'
-    | 'ui.generic.username'
-    | 'ui.generic.password'
     | 'ui.generic.search'
     | 'ui.generic.open_map'
     | 'ui.generic.nothing_here_yet'
     | 'ui.searchbox.label'
     | 'ui.searchbox.dropdown.msg'
-    | 'ui.sp.account.title'
-    | 'ui.sp.account.logged_in_as'
-    | 'ui.sp.account.benefits'
-    | 'ui.sp.accountlogin.title'
-    | 'ui.sp.accountlogin.failure'
     | 'ui.sp.about.title'
     | 'ui.sp.about.hint'
     | 'ui.sp.about.version'

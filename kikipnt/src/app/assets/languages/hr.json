@@ -1,15 +1,4 @@
 {
-    "ui.generic.log_in": "Prijavi se",
-    "ui.generic.register": "Registriraj se",
-    "ui.generic.log_out": "Odjavi se",
-    "ui.generic.username": "Korisničko ime",
-    "ui.generic.password": "Lozinka",
-    "ui.sp.account.title": "Račun",
-    "ui.sp.account.logged_in_as": "Prijavljen kao",
-    "ui.sp.account.benefits": "S <b class=\"text-nord-10 dark:text-nord-9\">kikipnt</b> <b>računom</b> možete spremiti <b>postavke</b> i <b>povijest pretraživanja</b>!<br>Što čekate? Stvorite/prijavite se u jedan upravo sad!",
-    "ui.sp.accountlogin.title": "Prijava",
-    "ui.sp.accountlogin.failure": "Neuspjelo prijavljivanje/registiranje!",
-
     "ui.generic.search": "Pretraži",
     "ui.generic.open_map": "Otvori kartu",
     "ui.generic.expand_collapse": "Sažmi/proširi",

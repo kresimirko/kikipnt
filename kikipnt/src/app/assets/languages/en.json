@@ -1,15 +1,4 @@
 {
-    "ui.generic.log_in": "Log in",
-    "ui.generic.register": "Register",
-    "ui.generic.log_out": "Log out",
-    "ui.generic.username": "Username",
-    "ui.generic.password": "Password",
-    "ui.sp.account.title": "Account",
-    "ui.sp.account.logged_in_as": "Logged in as",
-    "ui.sp.account.benefits": "With a <b class=\"text-nord-10 dark:text-nord-9\">kikipnt</b> <b>account</b> you can save <b>settings</b> and <b>search history</b>!<br>What are you waiting for? Create/log into one right now!",
-    "ui.sp.accountlogin.title": "Login",
-    "ui.sp.accountlogin.failure": "Failed to log in/register!",
-
     "ui.generic.search": "Search",
     "ui.generic.open_map": "Open map",
     "ui.generic.expand_collapse": "Expand/collapse",
