@@ -24,6 +24,23 @@ The project files themselves are in the [kikipnt](./kikipnt/) directory.
 
 (Working directory has to be [kikipnt](./kikipnt/).)
 
+The `src/app` directory has to contain the file `__firebaseConfig.json` that contains your Firebase project credentials.
+
+Its format is as follows:
+
+```json
+{
+    "apiKey": "...",
+    "authDomain": "...",
+    "projectId": "...",
+    "storageBucket": "...",
+    "messagingSenderId": "...",
+    "appId": "..."
+}
+```
+
+:warning: **Warning:** The Firebase functionalities of the app are unsafe. Use privately.
+
 `npm install` - install all the necessary packages (check the [dependency graph](https://github.com/kresimirko/kikipnt/network/dependencies) for a list)
 
 `npm run dev` - build and run the development version

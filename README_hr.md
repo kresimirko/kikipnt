@@ -24,6 +24,23 @@ Same datoteke projekta su u [kikipnt](./kikipnt/) mapi.
 
 (Radna mapa treba biti [kikipnt](./kikipnt/).)
 
+`src/app` mapa mora sadržavati datoteku `__firebaseConfig.json` koja sadrži vaše vjerodajnice Firebase projekta.
+
+Ovog je formata:
+
+```json
+{
+    "apiKey": "...",
+    "authDomain": "...",
+    "projectId": "...",
+    "storageBucket": "...",
+    "messagingSenderId": "...",
+    "appId": "..."
+}
+```
+
+:warning: **Upozorenje:** Firebase funkcionalnosti aplikacije nisu sigurne. Koristite privatno.
+
 `npm install` - instalirajte sve potrebne packageve (pogledajte [dependency graph](https://github.com/kresimirko/kikipnt/network/dependencies) za listu)
 
 `npm run dev` - buildaj i pokreni "development" verziju
