@@ -1,0 +1,38 @@
+{
+    "name": "kikipnt",
+    "version": "1.0.0",
+    "description": "A web app for looking up places of the world",
+    "source": "src/index.html",
+    "scripts": {
+        "dev": "npx parcel --no-hmr",
+        "prod": "npx parcel build --no-source-maps --public-url ./"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/kresimirko/edit-cs-shared.git"
+    },
+    "author": "Luka K. Mihovilović",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/kresimirko/edit-cs-shared/issues"
+    },
+    "homepage": "https://github.com/kresimirko/edit-cs-shared#readme",
+    "devDependencies": {
+        "@tailwindcss/forms": "^0.5.3",
+        "parcel": "^2.8.3",
+        "postcss": "^8.4.23",
+        "postcss-import": "^15.1.0",
+        "prettier": "2.8.8",
+        "process": "^0.11.10",
+        "tailwind-nord": "^1.3.0",
+        "tailwindcss": "^3.3.2"
+    },
+    "dependencies": {
+        "@floating-ui/dom": "^1.2.6",
+        "@types/leaflet": "^1.9.3",
+        "firebase": "^9.20.0",
+        "hotkeys-js": "^3.10.2",
+        "leaflet": "^1.9.3",
+        "store2": "^2.14.2"
+    }
+}

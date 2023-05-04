@@ -1,0 +1,43 @@
+@import url(./leaflet.css);
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .highlight {
+        @apply shadow-[inset_0_1px_0px_rgba(255,255,255,0.2)];
+    }
+    .highlight-w-shadow {
+        @apply shadow-[inset_0_1px_0px_rgba(255,255,255,0.2),0_35px_60px_-15px_rgba(0,0,0,0.1)];
+    }
+    .heading {
+        @apply text-4xl 2xl:text-5xl font-bold;
+    }
+    .pixelated {
+        image-rendering: pixelated;
+    }
+    .pretty-focus {
+        @apply focus:outline-none focus-visible:ring focus:ring-nord-10 focus:dark:ring-nord-9;
+    }
+    .ring-simple {
+        @apply ring-2 ring-[#b2bcd1] dark:ring-nord-3;
+    }
+    .border-simple {
+        @apply border-2 border-[#b2bcd1] dark:border-nord-3;
+    }
+}
+
+@layer base {
+    :root {
+        --blur-var: 8px;
+        --filter-tiles: invert(0);
+        --map-bg: #f2efe9; /* #292924 */
+    }
+    hr {
+        @apply border-[#b2bcd1] dark:border-nord3;
+    }
+    input[type='range'] {
+        @apply accent-nord-10 dark:accent-nord-9;
+    }
+}
