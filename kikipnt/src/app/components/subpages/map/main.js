@@ -68,7 +68,7 @@ export class SubpageMap extends Subpage {
         sidebarContainer.appendChild(sidebarContent);
 
         const sidebarLargeScreenContainer = document.createElement('div');
-        sidebarLargeScreenContainer.classList.add('grow', 'hidden', 'md:flex', 'flex-col');
+        sidebarLargeScreenContainer.classList.add('grow', 'hidden', 'md:flex', 'flex-col', 'overflow-auto');
         sidebarContent.appendChild(sidebarLargeScreenContainer);
 
         const sidebarCollapse = new QuickButton(
@@ -113,7 +113,7 @@ export class SubpageMap extends Subpage {
         sidebarLargeScreenContainer.appendChild(historyTextNotice);
 
         const sidebarHistoryContainer = document.createElement('div');
-        sidebarHistoryContainer.classList.add('max-w-full', 'grow', 'hidden', 'md:flex', 'flex-col', 'mt-1');
+        sidebarHistoryContainer.classList.add('max-w-full', 'grow', 'hidden', 'md:flex', 'flex-col', 'mt-1', 'overflow-auto');
         sidebarLargeScreenContainer.appendChild(sidebarHistoryContainer);
 
         /** @param {string} name */

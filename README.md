@@ -10,6 +10,10 @@
 
 ---
 
+:link: **Check it out running live!** [kikipnt on GitHub Pages](https://kresimirko.github.io/kikipnt/#/) (without Firebase functionality)
+
+---
+
 :pushpin: **kikipnt** (pronounced "kiki point") **is a web app for looking up places of the world**. Powered by [OpenStreetMap](https://www.openstreetmap.org/).
 
 ![kikipnt screenshot](./screenshots/latest.png)

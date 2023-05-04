@@ -10,6 +10,10 @@
 
 ---
 
+:link: **Pogledajte stranicu live!** [kikipnt na GitHub Pagesima](https://kresimirko.github.io/kikipnt/#/) (bez Firebase funkcionalnosti)
+
+---
+
 :pushpin: **kikipnt** (eng. izgovor "kiki point") **je web aplikacija za traženje mjesta na svijetu**. Pokrenuta [OpenStreetMapom](https://www.openstreetmap.org/).
 
 ![kikipnt screenshot](./screenshots/latest.png)
