@@ -12,7 +12,7 @@
 
 :warning: Trenutno gledate kod za **noviju** verziju kikipnta s dodatnim poboljšanjima koja je bazirana na verziji bez Firebase funkcionalosti. Ako želite vidjeti originalni kikipnt, prebacite se na [dev](https://github.com/kresimirko/kikipnt/tree/dev) branch.
 
-:link: **Pogledajte stranicu live!** [kikipnt na GitHub Pagesima](https://kresimirko.github.io/kikipnt/#/) (bez Firebase funkcionalnosti)
+:link: **Pogledajte stranicu live!** [kikipnt na GitHub Pagesima](https://kresimirko.github.io/kikipnt) (bez Firebase funkcionalnosti)
 
 ---
 

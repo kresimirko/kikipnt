@@ -12,7 +12,7 @@
 
 :warning: You're currently viewing the code for an **updated** version of kikipnt with additional improvements, based on a version with no Firebase funcionality. If you wish to view the original kikipnt, switch to the [dev](https://github.com/kresimirko/kikipnt/tree/dev) branch.
 
-:link: **Check it out running live!** [kikipnt on GitHub Pages](https://kresimirko.github.io/kikipnt/#/) (without Firebase functionality)
+:link: **Check it out running live!** [kikipnt on GitHub Pages](https://kresimirko.github.io/kikipnt) (without Firebase functionality)
 
 ---
 
