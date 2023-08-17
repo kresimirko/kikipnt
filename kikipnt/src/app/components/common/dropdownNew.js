@@ -35,7 +35,7 @@ export class DropdownNew {
                 this.mainDropdownElement.classList.add(classToken);
             });
         }
-        refElement.appendChild(this.mainDropdownElement);
+        document.body.appendChild(this.mainDropdownElement);
 
         this.title = document.createElement('div');
         this.title.classList.add('text-nord-3/50', 'dark:text-nord-4/50', 'text-sm', 'mb-2');
@@ -65,15 +65,7 @@ export class DropdownNew {
 
         if (options.initialItems) {
             for (const item of options.initialItems) {
-                switch (item.type) {
-                    default:
-                    case 'action':
-                        const qb = this.addAction(item);
-                        break;
-                    case 'separator':
-                        this.itemContainer.appendChild(document.createElement('hr'));
-                        break;
-                }
+                const qb = this.addAction(item);
             }
         }
 

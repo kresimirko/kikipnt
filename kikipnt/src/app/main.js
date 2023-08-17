@@ -33,7 +33,7 @@ export class MainApp {
         // dijeljeno i dostupno većini klasa
         this.consts = {
             appName: 'kikipnt',
-            appVersion: '1.0.0.1',
+            appVersion: '1.0.1',
             lightLogoURL: new URL('./assets/img/logo/kikipnt.svg', import.meta.url),
             darkLogoURL: new URL('./assets/img/logo/kikipnt_dark.svg', import.meta.url),
             miniLogoURL: new URL('./assets/img/logo/kikipnt_favicon.svg', import.meta.url),
@@ -208,7 +208,7 @@ export class MainApp {
             const optionId = option.value + 'radio';
 
             const optionRadio = document.createElement('input');
-            optionRadio.classList.add('!ring-offset-0', '!ring-0', 'text-nord-10');
+            optionRadio.classList.add('!ring-offset-0', '!ring-0', 'text-nord-10', 'pointer-events-none');
             optionRadio.type = 'radio';
             optionRadio.name = options.key;
             optionRadio.value = option.value;
@@ -217,6 +217,7 @@ export class MainApp {
             optionContainer.appendChild(optionRadio);
 
             const optionLabel = document.createElement('label');
+            optionLabel.classList.add('pointer-events-none');
             optionLabel.htmlFor = optionId;
             if (option.locValue) this.loc.bindSimpleEl(optionLabel, option.locValue);
             else if (option.text) optionLabel.innerText = option.text;
@@ -252,7 +253,7 @@ export class MainApp {
             const optionId = option.key + 'checkbox';
 
             const optionCheckbox = document.createElement('input');
-            optionCheckbox.classList.add('!ring-offset-0', '!ring-0', 'text-nord-10', 'rounded');
+            optionCheckbox.classList.add('!ring-offset-0', '!ring-0', 'text-nord-10', 'rounded', 'pointer-events-none');
             optionCheckbox.type = 'checkbox';
             optionCheckbox.name = option.key;
             optionCheckbox.value = option.key;
@@ -261,6 +262,7 @@ export class MainApp {
             optionContainer.appendChild(optionCheckbox);
 
             const optionLabel = document.createElement('label');
+            optionLabel.classList.add('pointer-events-none');
             optionLabel.htmlFor = optionId;
             if (option.locValue) this.loc.bindSimpleEl(optionLabel, option.locValue);
             else if (option.text) optionLabel.innerText = option.text;

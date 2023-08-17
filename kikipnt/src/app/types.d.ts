@@ -7,6 +7,7 @@ export type LanguageValues =
     | 'ui.generic.nothing_here_yet'
     | 'ui.searchbox.label'
     | 'ui.searchbox.dropdown.msg'
+    | 'ui.page_not_found'
     | 'ui.sp.about.title'
     | 'ui.sp.about.hint'
     | 'ui.sp.about.version'
@@ -16,28 +17,26 @@ export type LanguageValues =
     | 'ui.sp.home.title'
     | 'ui.sp.home.greeting'
     | 'ui.sp.home.learn_more'
+    | 'ui.sp.home.new_kikipnt_alert'
     | 'ui.sp.map.title'
-    | 'ui.sp.map.marker.add_favorite'
     | 'ui.sp.map.marker.focus_on_prev'
     | 'ui.sp.map.marker.focus_on'
     | 'ui.sp.map.marker.focus_on_next'
-    | 'ui.sp.map.marker.search_zoom'
     | 'ui.sp.map.marker.search_here'
-    | 'ui.sp.map.marker.remove_marker'
+    | 'ui.sp.map.marker.remove_marker' // rem
     | 'ui.sp.map.marker.type'
     | 'ui.sp.map.marker.coords'
     | 'ui.sp.map.zoom_in'
     | 'ui.sp.map.zoom_out'
     | 'ui.sp.map.leaflet_desc'
-    | 'ui.sp.map.open_favorites'
     | 'ui.sp.map.open_history'
+    | 'ui.sp.map.an_error_occurred'
     | 'ui.sp.history.title'
     | 'ui.sp.history.text_notice'
     | 'ui.sp.history.erase_all'
     | 'ui.sp.history.erase_all.confirm'
     | 'ui.sp.settings.title'
     | 'ui.sp.settings.theme'
-    | 'ui.sp.settings.force_sync'
     | 'ui.sp.settings.erase_all_data'
     | 'ui.sp.settings.erase_all_data_confirm'
     | 'ui.sp.settings.themes.light'
@@ -63,17 +62,9 @@ export interface LangBoundElement {
 }
 
 // subpageCollection
-export type SubpageId = 'about' | 'account' | 'accountlogin' | 'home' | 'map' | 'settings' | 'easteregg' | 'history';
+export type SubpageId = 'about' | 'home' | 'map' | 'settings' | 'easteregg' | 'history';
 
-export type SubpageLocation =
-    | '#/about'
-    | '#/about/easteregg'
-    | '#/account'
-    | '#/account/login'
-    | '#/'
-    | '#/map'
-    | '#/map/history'
-    | '#/settings';
+export type SubpageLocation = '#/about' | '#/about/easteregg' | '#' | '#/map' | '#/map/history' | '#/settings';
 
 // quickButton
 export interface QuickButtonStyle {
@@ -121,7 +112,7 @@ export interface SettingsObject {
 
 export type SettingsKeys = keyof SettingsObject;
 
-export type StorageKeys = SettingsKeys | 'history' | 'favorites';
+export type StorageKeys = SettingsKeys | 'history';
 
 // textBox
 export interface TextBoxOptions {
@@ -150,15 +141,12 @@ export interface FirebaseConfig {
 }
 
 // dropdownNew
-export interface DropdownNewItem extends QuickButtonOptions {
-    type?: string;
-}
 export interface DropdownNewOptions {
     title?: {
         locValue?: LanguageValues;
         text?: string;
     };
-    initialItems?: DropdownNewItem[];
+    initialItems?: QuickButtonOptions[];
     extraClasses?: string[];
     triggerType?: 'none' | 'click';
     placement?: Placement;

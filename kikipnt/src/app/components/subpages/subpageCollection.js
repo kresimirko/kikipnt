@@ -41,6 +41,9 @@ export class SubpageCollection {
             }, 10);
         };
 
+        const pageNotFoundSpan = document.createElement('span');
+        this.#mainApp.loc.bindSimpleEl(pageNotFoundSpan, 'ui.page_not_found');
+
         const onHashChange = () => {
             for (const el of this.mainContainer.children) {
                 this.mainContainer.removeChild(el);
@@ -48,12 +51,15 @@ export class SubpageCollection {
 
             // uklanjamo nepotreban / na kraju
             let wantedLocation = location.hash;
-            if (wantedLocation !== '#/') {
-                let wantedLocationSplit = wantedLocation.split('');
-                if (wantedLocationSplit[wantedLocationSplit.length - 1] === '/') {
-                    wantedLocationSplit.pop();
-                    wantedLocation = wantedLocationSplit.join('');
-                }
+            let wantedLocationSplit = wantedLocation.split('');
+            if (wantedLocationSplit[wantedLocationSplit.length - 1] === '/') {
+                wantedLocationSplit.pop();
+                wantedLocation = wantedLocationSplit.join('');
+            }
+
+            // brzi fix
+            if (wantedLocation === '') {
+                wantedLocation = '#';
             }
 
             let subpageExists = false;
@@ -66,7 +72,7 @@ export class SubpageCollection {
                 }
             }
             if (!subpageExists) {
-                location.hash = '#/';
+                this.mainContainer.appendChild(pageNotFoundSpan);
             }
 
             this.#mainApp.events.quick.subpage.collectionRefreshed();

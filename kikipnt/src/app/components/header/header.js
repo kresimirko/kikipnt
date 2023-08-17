@@ -16,7 +16,7 @@ export class TopBarHeader {
 
         const miniLogo = document.createElement('a');
         miniLogo.draggable = false;
-        miniLogo.href = '#/';
+        miniLogo.href = '#';
         miniLogo.classList.add('sm:hidden', 'mr-2');
         this.#mainApp.loc.bindSimpleElAriaLabel(miniLogo, 'ui.sp.home.title');
         this.#mainApp.statusLabel.addLoc(miniLogo, 'ui.sp.home.title');
@@ -24,7 +24,7 @@ export class TopBarHeader {
 
         const logo = document.createElement('a');
         logo.draggable = false;
-        logo.href = '#/';
+        logo.href = '#';
         logo.classList.add('hidden', 'sm:block', 'mr-3');
         this.#mainApp.loc.bindSimpleElAriaLabel(logo, 'ui.sp.home.title');
         this.#mainApp.statusLabel.addLoc(logo, 'ui.sp.home.title');

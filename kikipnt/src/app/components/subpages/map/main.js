@@ -113,7 +113,15 @@ export class SubpageMap extends Subpage {
         sidebarLargeScreenContainer.appendChild(historyTextNotice);
 
         const sidebarHistoryContainer = document.createElement('div');
-        sidebarHistoryContainer.classList.add('max-w-full', 'grow', 'hidden', 'md:flex', 'flex-col', 'mt-1', 'overflow-auto');
+        sidebarHistoryContainer.classList.add(
+            'max-w-full',
+            'grow',
+            'hidden',
+            'md:flex',
+            'flex-col',
+            'mt-1',
+            'overflow-auto'
+        );
         sidebarLargeScreenContainer.appendChild(sidebarHistoryContainer);
 
         /** @param {string} name */
@@ -214,6 +222,14 @@ export class SubpageMap extends Subpage {
         const customMarkerPopup = document.createElement('div');
         customMarkerPopup.classList.add('flex', 'justify-center');
         customMarker.bindPopup(customMarkerPopup);
+        customMarker.addEventListener('popupclose', () => {
+            setTimeout(() => {
+                if (!customMarker.isPopupOpen()) {
+                    customMarker.remove();
+                    customMarkerAdded = false;
+                }
+            }, 50);
+        });
 
         /** @param {import('leaflet').LeafletMouseEvent} event */
         const mapClickEvent = (event) => {
@@ -288,7 +304,11 @@ export class SubpageMap extends Subpage {
                                         keepMarkers: event.detail.data.keepMarkers ? true : false,
                                     })
                                 )
-                                .catch((error) => console.error(error));
+                                .catch((error) => {
+                                    console.error(error);
+                                    alert(this.#mainApp.loc.tr('ui.sp.map.an_error_occurred') + error);
+                                    afterSearch();
+                                });
                             console.log('to history: ' + event.detail.data.query);
                         } else {
                             afterSearch();
@@ -310,7 +330,11 @@ export class SubpageMap extends Subpage {
                                         keepMarkers: event.detail.data.keepMarkers ? true : false,
                                     })
                                 )
-                                .catch((error) => console.error(error));
+                                .catch((error) => {
+                                    console.error(error);
+                                    alert('An error occurred!\n\n' + error);
+                                    afterSearch();
+                                });
                         } else {
                             afterSearch();
                         }

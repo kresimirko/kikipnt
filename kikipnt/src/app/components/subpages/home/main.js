@@ -11,7 +11,7 @@ export class SubpageHome extends Subpage {
      */
     constructor(mainApp) {
         const rootContainer = document.createElement('div');
-        super('home', '#/', rootContainer, mainApp);
+        super('home', '#', rootContainer, mainApp);
         this.#mainApp = mainApp;
 
         this.rootContainer.classList.add('flex', 'flex-col', 'items-center', 'space-y-4');
@@ -86,6 +86,11 @@ export class SubpageHome extends Subpage {
         learnMoreLabel.classList.add('flex', 'pt-4', 'text-sm', 'xs:text-base', 'text-center');
         this.#mainApp.loc.bindSimpleEl(learnMoreLabel, 'ui.sp.home.learn_more');
         this.rootContainer.appendChild(learnMoreLabel);
+
+        const newKikipntAlertLabel = document.createElement('span');
+        newKikipntAlertLabel.classList.add('block', 'pt-4', 'text-sm', 'xs:text-base', 'text-center');
+        this.#mainApp.loc.bindSimpleEl(newKikipntAlertLabel, 'ui.sp.home.new_kikipnt_alert');
+        this.rootContainer.appendChild(newKikipntAlertLabel);
 
         /** @param {boolean} isDark */
         const updateLogo = (isDark) => {
