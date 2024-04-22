@@ -561,7 +561,10 @@ svg.leaflet-image-layer.leaflet-interactive path {
     @apply font-sans;
 }
 a.leaflet-popup-close-button {
-    font: 24px Tahoma, Verdana, sans-serif;
+    font:
+        24px Tahoma,
+        Verdana,
+        sans-serif;
 }
 .leaflet-container a.leaflet-popup-close-button {
     @apply font-sans text-nord-3 dark:text-nord-4;
