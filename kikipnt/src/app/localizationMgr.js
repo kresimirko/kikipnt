@@ -9,7 +9,7 @@ export class LocalizationManager {
     #languageObj;
 
     /** @type {import('./types').LangBoundElement[]} */
-    #boundElements = []; // ništa ne spriječava duplicirane elemente!
+    #boundElements = []; // ništa ne sprečava duplicirane elemente!
 
     /**
      * @param {MainApp} mainApp

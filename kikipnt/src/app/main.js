@@ -32,8 +32,8 @@ export class MainApp {
 
         // dijeljeno i dostupno većini klasa
         this.consts = {
-            appName: 'kikipnt',
-            appVersion: '1.0.1',
+            appName: process.env.APP_NAME,
+            appVersion: process.env.APP_VERSION,
             lightLogoURL: new URL('./assets/img/logo/kikipnt.svg', import.meta.url),
             darkLogoURL: new URL('./assets/img/logo/kikipnt_dark.svg', import.meta.url),
             miniLogoURL: new URL('./assets/img/logo/kikipnt_favicon.svg', import.meta.url),
