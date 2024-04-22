@@ -2,7 +2,8 @@
     "ui.generic.search": "Pretraži",
     "ui.generic.open_map": "Otvori kartu",
     "ui.generic.expand_collapse": "Sažmi/proširi",
-    "ui.generic.nothing_here_yet": "Ništa još ovdje!",
+    "ui.generic.nothing_here_yet": "Zasad ovdje nema ničeg!",
+    "ui.generic.auto_choice": "Automatsko",
 
     "ui.searchbox.label": "Pretraži mjesto",
     "ui.searchbox.dropdown.msg": "Upiši nešto i pritisni Enter, ili...",
@@ -27,6 +28,7 @@
     "ui.sp.map.marker.focus_on_next": "Fokusiraj se na sljedeći",
     "ui.sp.map.marker.search_here": "Traži ovdje",
     "ui.sp.map.marker.remove_marker": "Ukloni marker",
+    "ui.sp.map.marker.category": "Kategorija:",
     "ui.sp.map.marker.type": "Tip:",
     "ui.sp.map.marker.coords": "Koordinate:",
     "ui.sp.map.zoom_in": "Povećaj zoom",
@@ -36,7 +38,7 @@
     "ui.sp.map.an_error_occurred": "Dogodila se greška!\nProvjerite svoju internet vezu, osvježite stranicu i pokušajte ponovno.\n\n--- Više informacija: ---\n",
 
     "ui.sp.history.title": "Povijest",
-    "ui.sp.history.text_notice": "Obavijest: samo tekstualne pretrage su zabilježene.",
+    "ui.sp.history.text_notice": "ⓘ Samo tekstualne pretrage su zabilježene.",
     "ui.sp.history.erase_all": "Izbriši svu povijest",
     "ui.sp.history.erase_all.confirm": "Jeste li sigurni da želite izbrisati svu povijest?",
 
@@ -44,12 +46,17 @@
     "ui.sp.settings.theme": "Tema",
     "ui.sp.settings.themes.light": "Svijetla",
     "ui.sp.settings.themes.dark": "Tamna",
-    "ui.sp.settings.themes.auto": "Automatska",
-    "ui.sp.settings.themes.dark_tiles": "Tamna tema za pločice karte",
     "ui.sp.settings.themes.blur_enabled": "Efekt zamagljenja (utječe na performansu)",
     "ui.sp.settings.language": "Jezik",
     "ui.sp.settings.erase_all_data": "Izbriši sve podatke",
     "ui.sp.settings.erase_all_data_confirm": "Jeste li sigurni da želite izbrisati sve podatke?",
+    "ui.sp.settings.map": "Karta",
+    "ui.sp.settings.map.dark_tiles": "Tamna tema za pločice karte",
+    "ui.sp.settings.map.retina_tiles": "Retina (high DPI) pločice karte",
+    "ui.sp.settings.map.retina_tiles.always": "Uvijek",
+    "ui.sp.settings.map.retina_tiles.never": "Nikad",
+    "ui.sp.settings.map.retina_tiles.info.auto": "<span class=\"opacity-70\">ⓘ Opcija \"Automatsko\" provjerava ima li uređaj visoki DPI samo u trenutku otvaranja aplikacije.</span> <a class=\"text-nord-10 dark:text-nord-9\" href=\"https://en.wikipedia.org/wiki/Dots_per_inch\">Što je DPI?</a>",
+    "ui.sp.settings.map.retina_tiles.info.load": "<span class=\"opacity-70\">ⓘ Ako se pločice karte ne uspijevaju učitati, pokušajte opciju \"Nikad\".</span> <a class=\"text-nord-10 dark:text-nord-9\" href=\"https://www.maptilesapi.com/retina-tiles/\">Retina Tiles API</a> <span class=\"opacity-70\">je freemium i može biti potrošeno (resetira se svaki dan).</span>",
 
     "ui.sp.settingsdev.title": "Razvojske opcije",
 

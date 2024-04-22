@@ -3,6 +3,7 @@
     "ui.generic.open_map": "Open map",
     "ui.generic.expand_collapse": "Expand/collapse",
     "ui.generic.nothing_here_yet": "Nothing here yet!",
+    "ui.generic.auto_choice": "Automatic",
 
     "ui.searchbox.label": "Search for a place",
     "ui.searchbox.dropdown.msg": "Type something in and hit Enter, or...",
@@ -27,6 +28,7 @@
     "ui.sp.map.marker.focus_on_next": "Focus on next",
     "ui.sp.map.marker.search_here": "Search here",
     "ui.sp.map.marker.remove_marker": "Remove marker",
+    "ui.sp.map.marker.category": "Category:",
     "ui.sp.map.marker.type": "Type:",
     "ui.sp.map.marker.coords": "Coordinates:",
     "ui.sp.map.zoom_in": "Zoom in",
@@ -36,7 +38,7 @@
     "ui.sp.map.an_error_occurred": "An error occurred!\nCheck your internet connection, refresh the page and try again.\n\n--- More info: ---\n",
 
     "ui.sp.history.title": "History",
-    "ui.sp.history.text_notice": "Note: only text search queries are logged.",
+    "ui.sp.history.text_notice": "ⓘ Only text search queries are logged.",
     "ui.sp.history.erase_all": "Erase all history",
     "ui.sp.history.erase_all.confirm": "Are you sure you want to erase all history?",
 
@@ -44,12 +46,17 @@
     "ui.sp.settings.theme": "Theme",
     "ui.sp.settings.themes.light": "Light",
     "ui.sp.settings.themes.dark": "Dark",
-    "ui.sp.settings.themes.auto": "Auto",
-    "ui.sp.settings.themes.dark_tiles": "Dark theme for map tiles",
     "ui.sp.settings.themes.blur_enabled": "Blur effect (affects performance)",
     "ui.sp.settings.language": "Language",
     "ui.sp.settings.erase_all_data": "Reset all data",
     "ui.sp.settings.erase_all_data_confirm": "Are you sure you wish to reset all data?",
+    "ui.sp.settings.map": "Map",
+    "ui.sp.settings.map.dark_tiles": "Dark theme for map tiles",
+    "ui.sp.settings.map.retina_tiles": "Retina (high DPI) map tiles",
+    "ui.sp.settings.map.retina_tiles.always": "Always",
+    "ui.sp.settings.map.retina_tiles.never": "Never",
+    "ui.sp.settings.map.retina_tiles.info.auto": "<span class=\"opacity-70\">ⓘ The \"Automatic\" option checks if the device has a high DPI only on app startup.</span> <a class=\"text-nord-10 dark:text-nord-9\" href=\"https://en.wikipedia.org/wiki/Dots_per_inch\">What is DPI?</a>",
+    "ui.sp.settings.map.retina_tiles.info.load": "<span class=\"opacity-70\">ⓘ If map tiles fail to load, try setting this to \"Never\". The</span> <a class=\"text-nord-10 dark:text-nord-9\" href=\"https://www.maptilesapi.com/retina-tiles/\">Retina Tiles API</a> <span class=\"opacity-70\">is freemium and might get used up (resets each day).</span>",
 
     "ui.sp.settingsdev.title": "Developer options",
 

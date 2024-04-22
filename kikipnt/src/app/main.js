@@ -65,7 +65,14 @@ export class MainApp {
                 },
                 defaultTileLayerUrl: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
                 defaultTileLayerOptions: {
+                    maxZoom: 19,
                     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+                },
+                // key treba staviti u .env (ili u .env.local i sl.)
+                retinaTileLayerUrl: 'https://retina-tiles.p.rapidapi.com/local/osm{r}/v1/{z}/{x}/{y}.png?rapidapi-key=' + process.env.API_KEY_RETINA_TILES,
+                retinaTileLayerOptions: {
+                    maxZoom: 19,
+                    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, <a href="https://www.maptilesapi.com/retina-tiles/">Retina Tiles</a>',
                 },
             },
         };

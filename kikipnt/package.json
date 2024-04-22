@@ -1,6 +1,6 @@
 {
     "name": "kikipnt",
-    "version": "1.0.2",
+    "version": "1.1",
     "description": "A web app for looking up places of the world",
     "source": "src/index.html",
     "scripts": {

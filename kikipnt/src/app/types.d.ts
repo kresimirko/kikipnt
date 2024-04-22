@@ -5,6 +5,8 @@ export type LanguageValues =
     | 'ui.generic.search'
     | 'ui.generic.open_map'
     | 'ui.generic.nothing_here_yet'
+    | 'ui.generic.expand_collapse'
+    | 'ui.generic.auto_choice'
     | 'ui.searchbox.label'
     | 'ui.searchbox.dropdown.msg'
     | 'ui.page_not_found'
@@ -24,6 +26,7 @@ export type LanguageValues =
     | 'ui.sp.map.marker.focus_on_next'
     | 'ui.sp.map.marker.search_here'
     | 'ui.sp.map.marker.remove_marker' // rem
+    | 'ui.sp.map.marker.category'
     | 'ui.sp.map.marker.type'
     | 'ui.sp.map.marker.coords'
     | 'ui.sp.map.zoom_in'
@@ -41,14 +44,18 @@ export type LanguageValues =
     | 'ui.sp.settings.erase_all_data_confirm'
     | 'ui.sp.settings.themes.light'
     | 'ui.sp.settings.themes.dark'
-    | 'ui.sp.settings.themes.auto'
-    | 'ui.sp.settings.themes.dark_tiles'
     | 'ui.sp.settings.themes.blur_enabled'
+    | 'ui.sp.settings.map'
+    | 'ui.sp.settings.map.dark_tiles'
+    | 'ui.sp.settings.map.retina_tiles'
+    | 'ui.sp.settings.map.retina_tiles.always'
+    | 'ui.sp.settings.map.retina_tiles.never'
+    | 'ui.sp.settings.map.retina_tiles.info.auto'
+    | 'ui.sp.settings.map.retina_tiles.info.load'
     | 'ui.sp.settings.language'
     | 'ui.sp.settingsdev.title'
     | 'ui.sp.easteregg.title'
-    | 'ui.sp.easteregg.status'
-    | 'ui.generic.expand_collapse';
+    | 'ui.sp.easteregg.status';
 
 export interface LanguageObject {
     [T in LanguageValues]: string;
@@ -104,10 +111,11 @@ export interface QuickInputOptions {
 
 // storage
 export interface SettingsObject {
-    language: 'en' | 'hr';
-    theme: 'light' | 'dark' | 'auto';
+    language: 'en' | 'hr' | 'auto';
+    theme: 'auto' | 'light' | 'dark';
     blur_enabled: boolean;
     dark_tiles: boolean;
+    retina_tiles: 'auto' | 'always' | 'never';
 }
 
 export type SettingsKeys = keyof SettingsObject;

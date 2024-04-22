@@ -1,6 +1,7 @@
 {
-    "language": "en",
+    "language": "auto",
     "theme": "auto",
     "blur_enabled": false,
-    "dark_tiles": true
+    "dark_tiles": true,
+    "retina_tiles": "auto"
 }

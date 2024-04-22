@@ -98,12 +98,12 @@ export class SubpageMap extends Subpage {
         updateCollapseBtnIcon();
 
         const sidebarHistoryTitle = document.createElement('span');
-        sidebarHistoryTitle.classList.add('font-bold', 'mt-3', 'sm:mt-0');
+        sidebarHistoryTitle.classList.add('font-bold', 'text-2xl', 'mt-3', 'sm:mt-0');
         this.#mainApp.loc.bindSimpleEl(sidebarHistoryTitle, 'ui.sp.history.title');
         sidebarLargeScreenContainer.appendChild(sidebarHistoryTitle);
 
         const historyNoneYetLabel = document.createElement('div');
-        historyNoneYetLabel.classList.add('text-sm', 'opacity-60', 'block');
+        historyNoneYetLabel.classList.add('text-sm', 'block');
         this.#mainApp.loc.bindSimpleEl(historyNoneYetLabel, 'ui.generic.nothing_here_yet');
         sidebarLargeScreenContainer.appendChild(historyNoneYetLabel);
 
@@ -201,10 +201,37 @@ export class SubpageMap extends Subpage {
             zoom: 4,
             zoomControl: false,
         });
+
         const mainTileLayer = new TileLayer(
             this.#mainApp.consts.leaflet.defaultTileLayerUrl,
             this.#mainApp.consts.leaflet.defaultTileLayerOptions
-        ).addTo(map);
+        );
+        const retinaTileLayer = new TileLayer(
+            this.#mainApp.consts.leaflet.retinaTileLayerUrl,
+            this.#mainApp.consts.leaflet.retinaTileLayerOptions
+        );
+        const removeAllTileLayers = () => {
+            map.removeLayer(mainTileLayer);
+            map.removeLayer(retinaTileLayer);
+        }
+        const setRetina = () => {
+            removeAllTileLayers();
+            if (this.#mainApp.storage.safeGet('retina_tiles') == 'auto') {
+                let retina = window.devicePixelRatio > 1 ? true : false;
+                retina ? retinaTileLayer.addTo(map) : mainTileLayer.addTo(map);
+            } else if (this.#mainApp.storage.safeGet('retina_tiles') === 'always') {
+                retinaTileLayer.addTo(map);
+            } else if (this.#mainApp.storage.safeGet('retina_tiles') === 'never') {
+                mainTileLayer.addTo(map);
+            } else { // failsafe
+                mainTileLayer.addTo(map);
+            }
+        };
+        setRetina();
+        this.#mainApp.events.target.addEventListener('settingschanged', () => {
+            setRetina();
+        });
+
         control
             .zoom({
                 position: 'topright',
@@ -366,7 +393,7 @@ export class SubpageMap extends Subpage {
                 }).addTo(map);
 
                 const markerPopup = document.createElement('div');
-                markerPopup.classList.add('flex', 'flex-col', 'space-y-1', 'text-sm');
+                markerPopup.classList.add('flex', 'flex-col', 'space-y-1', 'text-sm', 'max-w-72', 'break-words');
 
                 if (place['icon']) {
                     const markerPopupIcon = document.createElement('img');
@@ -376,34 +403,52 @@ export class SubpageMap extends Subpage {
                 }
 
                 const markerPopupPlaceName = document.createElement('span');
-                markerPopupPlaceName.classList.add('font-bold', 'block', 'select-text');
+                markerPopupPlaceName.classList.add('font-bold', 'block', 'select-text', 'break-words');
                 markerPopupPlaceName.innerText = place['display_name'];
                 markerPopup.appendChild(markerPopupPlaceName);
 
+                const markerPopupCategoryContainer = document.createElement('div');
+                markerPopupCategoryContainer.classList.add('flex', 'flex-wrap', 'select-text');
+                markerPopup.appendChild(markerPopupCategoryContainer);
+
+                const markerPopupCategoryLabel = document.createElement('div');
+                markerPopupCategoryLabel.classList.add('mr-1');
+                this.#mainApp.loc.bindSimpleEl(markerPopupCategoryLabel, 'ui.sp.map.marker.category');
+                markerPopupCategoryContainer.appendChild(markerPopupCategoryLabel);
+
+                const markerPopupCategory = document.createElement('div');
+                markerPopupCategory.classList.add('break-words');
+                markerPopupCategory.innerText = place['category'];
+                markerPopupCategoryContainer.appendChild(markerPopupCategory);
+
                 const markerPopupTypeContainer = document.createElement('div');
-                markerPopupTypeContainer.classList.add('flex', 'space-x-1', 'select-text');
+                markerPopupTypeContainer.classList.add('flex', 'flex-wrap', 'select-text');
                 markerPopup.appendChild(markerPopupTypeContainer);
 
                 const markerPopupTypeLabel = document.createElement('div');
+                markerPopupTypeLabel.classList.add('mr-1');
                 this.#mainApp.loc.bindSimpleEl(markerPopupTypeLabel, 'ui.sp.map.marker.type');
                 markerPopupTypeContainer.appendChild(markerPopupTypeLabel);
 
                 const markerPopupType = document.createElement('div');
+                markerPopupType.classList.add('break-words');
                 markerPopupType.innerText = place['type'];
                 markerPopupTypeContainer.appendChild(markerPopupType);
 
                 const markerPopupCoordsContainer = document.createElement('div');
-                markerPopupCoordsContainer.classList.add('flex', 'space-x-1', 'select-text');
+                markerPopupCoordsContainer.classList.add('flex', 'flex-wrap', 'select-text');
                 markerPopup.appendChild(markerPopupCoordsContainer);
 
                 const markerPopupCoordsLabel = document.createElement('div');
+                markerPopupCoordsLabel.classList.add('mr-1');
                 this.#mainApp.loc.bindSimpleEl(markerPopupCoordsLabel, 'ui.sp.map.marker.coords');
                 markerPopupCoordsContainer.appendChild(markerPopupCoordsLabel);
 
                 const markerPopupCoords = document.createElement('div');
-                markerPopupCoords.innerText = `${parseFloat(place['lat']).toFixed(4)}, ${parseFloat(
+                markerPopupCoords.classList.add('break-all');
+                markerPopupCoords.innerText = `${parseFloat(place['lat'])}, ${parseFloat(
                     place['lon']
-                ).toFixed(4)}`;
+                )}`;
                 markerPopupCoordsContainer.appendChild(markerPopupCoords);
 
                 const placeId = place['osm_type'].split('')[0].toUpperCase() + place['osm_id'];

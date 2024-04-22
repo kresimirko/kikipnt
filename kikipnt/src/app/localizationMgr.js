@@ -27,6 +27,16 @@ export class LocalizationManager {
                 case 'en':
                     this.#languageObj = en;
                     break;
+                case 'auto':
+                    const lang = navigator.language.substring(0, 2);
+                    if (lang === 'en') {
+                        this.#languageObj = en;
+                    } else if (lang === 'hr' || lang === 'bs' || lang === 'sr' ) { // hrvatski, bosanski, srpski
+                        this.#languageObj = hr;
+                    } else {
+                        this.#languageObj = en;
+                    }
+                    break;
                 default:
                     console.warn('Invalid language stored in user store! Setting to en...');
                     this.#mainApp.storage.safeSet('language', 'en');

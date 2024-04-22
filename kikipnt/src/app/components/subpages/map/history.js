@@ -15,7 +15,7 @@ export class SubpageHistory extends Subpage {
         this.#mainApp = mainApp;
 
         const noneYetLabel = document.createElement('span');
-        noneYetLabel.classList.add('text-sm', 'opacity-60', 'block');
+        noneYetLabel.classList.add('text-sm', 'block');
         this.#mainApp.loc.bindSimpleEl(noneYetLabel, 'ui.generic.nothing_here_yet');
 
         const textNotice = document.createElement('span');

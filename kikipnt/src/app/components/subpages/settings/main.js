@@ -25,19 +25,52 @@ export class SubpageSettings extends Subpage {
             this.#mainApp.createOptionsRadio({
                 key: 'theme',
                 optionList: [
+                    { locValue: 'ui.generic.auto_choice', value: 'auto' },
                     { locValue: 'ui.sp.settings.themes.light', value: 'light' },
                     { locValue: 'ui.sp.settings.themes.dark', value: 'dark' },
-                    { locValue: 'ui.sp.settings.themes.auto', value: 'auto' },
                 ],
             })
         );
 
         this.rootContainer.appendChild(
             this.#mainApp.createOptionsCheckbox([
-                { locValue: 'ui.sp.settings.themes.dark_tiles', key: 'dark_tiles' },
                 { locValue: 'ui.sp.settings.themes.blur_enabled', key: 'blur_enabled' },
             ])
         );
+
+        const mapLabel = document.createElement('span');
+        mapLabel.classList.add('text-xl', 'pt-4', 'block');
+        this.#mainApp.loc.bindSimpleEl(mapLabel, 'ui.sp.settings.map');
+        this.rootContainer.appendChild(mapLabel);
+
+        this.rootContainer.appendChild(
+            this.#mainApp.createOptionsCheckbox([{ locValue: 'ui.sp.settings.map.dark_tiles', key: 'dark_tiles' }]),
+        );
+
+        const retinaTilesLabel = document.createElement('span');
+        retinaTilesLabel.classList.add('text-lg', 'pt-2', 'block');
+        this.#mainApp.loc.bindSimpleEl(retinaTilesLabel, 'ui.sp.settings.map.retina_tiles');
+        this.rootContainer.appendChild(retinaTilesLabel);
+
+        this.rootContainer.appendChild(
+            this.#mainApp.createOptionsRadio({
+                key: 'retina_tiles',
+                optionList: [
+                    { locValue: 'ui.generic.auto_choice', value: 'auto' },
+                    { locValue: 'ui.sp.settings.map.retina_tiles.always', value: 'always' },
+                    { locValue: 'ui.sp.settings.map.retina_tiles.never', value: 'never' },
+                ],
+            }),
+        );
+
+        const rtInfoAutoLabel = document.createElement('span');
+        rtInfoAutoLabel.classList.add('text-sm', 'block');
+        this.#mainApp.loc.bindSimpleEl(rtInfoAutoLabel, 'ui.sp.settings.map.retina_tiles.info.auto');
+        this.rootContainer.appendChild(rtInfoAutoLabel);
+        const rtInfoLoadLabel = document.createElement('span');
+        rtInfoLoadLabel.classList.add('text-sm', 'block');
+        this.#mainApp.loc.bindSimpleEl(rtInfoLoadLabel, 'ui.sp.settings.map.retina_tiles.info.load');
+        this.rootContainer.appendChild(rtInfoLoadLabel);
 
         const langLabel = document.createElement('span');
         langLabel.classList.add('text-xl', 'pt-4', 'block');
@@ -48,6 +81,7 @@ export class SubpageSettings extends Subpage {
             this.#mainApp.createOptionsRadio({
                 key: 'language',
                 optionList: [
+                    { locValue: 'ui.generic.auto_choice', value: 'auto' },
                     { text: 'English (en)', value: 'en' },
                     { text: 'Hrvatski (Croatian) (hr)', value: 'hr' },
                 ],
