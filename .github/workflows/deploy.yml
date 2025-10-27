@@ -1,5 +1,7 @@
 name: Deploy to GitHub Pages
 
+# adapted from https://svelte.dev/docs/kit/adapter-static
+
 on:
   push:
     branches:
