@@ -10,9 +10,12 @@
 
 ---
 
-:link: **Check it out running live!** [kikipnt on GitHub Pages](https://kresimirko.github.io/kikipnt/#/) (without Firebase functionality)
+:warning: You are viewing the branch with all Firebase code replaced with stubs. You can "log in" and "log out", but it's just cosmetic.
 
-If you wish to see the source code without Firebase functionality, check out the `dev-no-firebase` branch.
+:link: **Check it out running live!** [kikipnt on GitHub Pages](https://kresimirko.github.io/kikipnt/#/) (built from this branch)
+
+If you wish to see the source code with ACTUAL functionality, check out the `dev` branch.
+If you wish to see the source code with NO Firebase code at all, check out the `dev-no-firebase` branch.
 
 ---
 

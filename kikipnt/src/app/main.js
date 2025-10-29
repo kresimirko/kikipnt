@@ -5,7 +5,7 @@ import { StatusLabel } from './components/header/statusLabel';
 import { icon, latLng } from 'leaflet';
 import store from 'store2';
 import { FirebaseInterface } from './firebase/firebaseInterface';
-import firebaseConfig from './__firebaseConfig.json';
+// import firebaseConfig from './__firebaseConfig.json';
 import defaultSettings from './assets/defaultSettings.json';
 
 export class MainApp {
@@ -35,7 +35,7 @@ export class MainApp {
         // dijeljeno i dostupno većini klasa
         this.consts = {
             appName: 'kikipnt',
-            appVersion: '1.0.0.1',
+            appVersion: '1.0.0.1-firebase-stub',
             lightLogoURL: new URL('./assets/img/logo/kikipnt.svg', import.meta.url),
             darkLogoURL: new URL('./assets/img/logo/kikipnt_dark.svg', import.meta.url),
             miniLogoURL: new URL('./assets/img/logo/kikipnt_favicon.svg', import.meta.url),
@@ -185,7 +185,9 @@ export class MainApp {
             },
         };
 
-        this.firebaseInterface = new FirebaseInterface(this, firebaseConfig);
+        // this.firebaseInterface = new FirebaseInterface(this, firebaseConfig);
+        // @ts-expect-error
+        this.firebaseInterface = new FirebaseInterface(this, {});
 
         this.loc = new LocalizationManager(this);
 

@@ -10,9 +10,12 @@
 
 ---
 
-:link: **Pogledajte stranicu live!** [kikipnt na GitHub Pagesima](https://kresimirko.github.io/kikipnt/#/) (bez Firebase funkcionalnosti)
+:warning: Gledate branch u kojoj je sav kod zamijenjen sa stubovima. Možete se "prijaviti" i "odjaviti", ali je samo vizualno.
 
-Ako želite vidjeti izvorni kod bez Firebase funkcionalnosti, pogledajte `dev-no-firebase` branch.
+:link: **Pogledajte stranicu live!** [kikipnt na GitHub Pagesima](https://kresimirko.github.io/kikipnt/#/) (buildano s ovog brancha)
+
+Ako želite vidjeti izvorni kod s PRAVOM Firebase funkcionalnosti, pogledajte `dev` branch.
+Ako želite vidjeti izvorni kod BEZ IKAKVOG Firebase koda, pogledajte `dev-no-firebase` branch.
 
 ---
 
